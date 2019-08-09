@@ -24,13 +24,13 @@ app.post('/send', (req, res) => {
   });
 
   if(!req.body.name) {
-    return res.status(400).send('Missing a name field!');
+    return res.status(400).json({message: 'The name field is required!'});
   }
   if(!req.body.email) {
-    return res.status(400).send('Missing an email field!');
+    return res.status(400).json({message: 'The email field is required!'});
   }
   if(!req.body.message) {
-    return res.status(400).send('Missing a message field!');
+    return res.status(400).json({message: 'The message field is required!'});
   }
 
   const mailOptions = {
