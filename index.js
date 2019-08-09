@@ -49,12 +49,14 @@ app.post('/send', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if(error){
       console.log(error);
+      return res.status(500).json({message: 'There was an internal server error while trying to send this message.'})
     } else {
       console.log('Email sent: ' + info.response);
+      return res.sendStatus(200)
     }
   });
 
-  return res.sendStatus(200)
+  
 });
 
 app.listen(port, () => {
