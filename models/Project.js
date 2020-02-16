@@ -20,10 +20,10 @@ const ProjectSchema = new mongoose.Schema({
   gif: {
     type: String,
   },
-  mobileThumbnail: {
+  mobile_thumbnail: {
     type: String,
   },
-  mobileGif: {
+  mobile_gif: {
     type: String,
   }, 
   description: {
