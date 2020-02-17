@@ -15,7 +15,6 @@ const ProjectSchema = new mongoose.Schema({
   },
   thumbnail: {
     type: String,
-    required: true,
   },
   gif: {
     type: String,
