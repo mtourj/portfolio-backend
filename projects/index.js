@@ -22,7 +22,17 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
   // Post a new project
   try {
-    const newProject = new Projects(req.body);
+
+    const projects = await Projects.find();
+
+    const orders = projects.map(p => p.order);
+
+    const data = {
+      ...req.body,
+      order: Math.max(...orders) + 100
+    }
+
+    const newProject = new Projects(data);
 
     await newProject.save();
 
