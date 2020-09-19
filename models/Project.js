@@ -3,15 +3,19 @@ const mongoose = require('mongoose');
 const ProjectSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   github: {
     type: String,
-    required: true
+    required: true,
   },
   demo: {
     type: String,
-    required: false
+    required: false,
+  },
+  case_study: {
+    type: String,
+    required: false,
   },
   thumbnail: {
     type: String,
@@ -24,23 +28,23 @@ const ProjectSchema = new mongoose.Schema({
   },
   mobile_gif: {
     type: String,
-  }, 
+  },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   tech: {
     type: String,
-    required: true
+    required: true,
   },
   early: {
     type: Boolean,
-    default: false
+    default: false,
   },
   order: {
     type: Number,
-    default: 0
-  }
-})
+    default: 0,
+  },
+});
 
-module.exports = mongoose.model('Project', ProjectSchema, 'Projects')
+module.exports = mongoose.model('Project', ProjectSchema, 'Projects');
