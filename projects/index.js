@@ -1,5 +1,6 @@
 const express = require('express');
 const Projects = require('../models/Project');
+const protected = require('../util/protected');
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', protected, async (req, res) => {
   // Post a new project
   try {
 
@@ -48,7 +49,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', protected, async (req, res) => {
   // Edit a project
   try {
 
@@ -71,7 +72,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', protected, async (req, res) => {
   // Delete a project
   try {
     const { id } = req.params;
